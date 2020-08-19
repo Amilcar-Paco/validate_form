@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'form_validation.dart';
 
 void main() {
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Coding with Amílcar Paco',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: FormValidation(),
