@@ -22,7 +22,7 @@ class _FormValidationState extends State<FormValidation> {
       ),
       validator: (String value) {
         if(value.isEmpty){
-          return 'Name is required';
+          return 'Name is required.';
         }
       },
       onSaved: (String value){
