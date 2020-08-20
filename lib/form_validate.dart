@@ -75,7 +75,7 @@ class _FormValidationState extends State<FormValidation> {
     Widget _buildPhone(){
     return TextFormField(
       decoration: InputDecoration(
-        labelText: 'Phonre number'
+        labelText: 'Phone number'
       ),
       keyboardType: TextInputType.phone,
       validator: (String value) {
@@ -129,53 +129,55 @@ class _FormValidationState extends State<FormValidation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Form Validation Demo")
-      ),
-      body: Container(
-        padding: EdgeInsets.all(18),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _buildName(),
-              _buildEmail(),
-              _buildPassword(),
-              _buildPhone(),
-              _buildUrl(),
-              _buildAge(),
+          appBar: AppBar(
+          title: Text("Form Validation Demo")
+        ),
+        body: SingleChildScrollView(
+                  child: Container(
+            margin: EdgeInsets.all(16),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _buildName(),
+                  _buildEmail(),
+                  _buildPassword(),
+                  _buildPhone(),
+                  _buildUrl(),
+                  _buildAge(),
 
-              SizedBox(height: 50),
+                  SizedBox(height: 50),
 
-              RaisedButton(
-                child: Text('Save',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 16
-                ),
+                  RaisedButton(
+                    child: Text('Save',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 16
+                    ),
+                  ),
+
+                    onPressed: () {
+                      if(!_formKey.currentState.validate()) {
+                        return;
+                      }
+
+                      _formKey.currentState.save();
+
+                      print(_name);
+                      print(_email);
+                      print(_password);
+                      print(_phone);
+                      print(_url);
+                      print(_age);
+                    }
+                  )
+
+                ],
               ),
-
-                onPressed: () {
-                  if(!_formKey.currentState.validate()) {
-                    return;
-                  }
-
-                  _formKey.currentState.save();
-
-                  print(_name);
-                  print(_email);
-                  print(_password);
-                  print(_phone);
-                  print(_url);
-                  print(_age);
-                }
-              )
-
-            ],
+            ),
           ),
         ),
-      ),
     );
   }
 }
