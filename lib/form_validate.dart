@@ -109,7 +109,7 @@ class _FormValidationState extends State<FormValidation> {
     Widget _buildAge(){
     return TextFormField(
       decoration: InputDecoration(
-        labelText: 'Weight'
+        labelText: 'Age'
       ),
       keyboardType: TextInputType.number,
       validator: (String value) {
@@ -133,7 +133,7 @@ class _FormValidationState extends State<FormValidation> {
           title: Text("Form Validation Demo")
         ),
         body: SingleChildScrollView(
-                  child: Container(
+          child: Container(
             margin: EdgeInsets.all(16),
             child: Form(
               key: _formKey,
